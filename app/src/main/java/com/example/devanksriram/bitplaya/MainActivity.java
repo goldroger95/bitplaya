@@ -2,13 +2,16 @@ package com.example.devanksriram.bitplaya;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,6 +21,7 @@ import java.io.File;
 public class MainActivity extends Activity {
     private ListView ls1;
     private TextView tx1;
+    private Button launchpeerdiscoverybutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,13 @@ public class MainActivity extends Activity {
             tx1=(TextView)findViewById(R.id.tx1);
             tx1.setText("File does not exist");
         }
+        launchpeerdiscoverybutton=(Button)findViewById(R.id.startpeerdiscovery);
+        launchpeerdiscoverybutton.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                Intent intent=new Intent(MainActivity.this,PeerDiscovery.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

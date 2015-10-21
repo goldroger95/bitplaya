@@ -3,6 +3,11 @@
     package="com.example.devanksriram.bitplaya" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +29,17 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name=".PeerDiscovery"
+            android:label="@string/title_activity_peer_discovery" >
+        </activity>
+
+        <receiver
+            android:name=".WifiDirectBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
     </application>
 
 </manifest>

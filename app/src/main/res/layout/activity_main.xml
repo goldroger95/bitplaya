@@ -15,5 +15,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/tx1"
         />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startpeerdiscovery"
+        android:layout_below="@id/music_list"
+        android:text="Get Devices"
+        />
 </RelativeLayout>
